@@ -84,16 +84,16 @@ class CategoryResource extends Resource
     
 
 }
-    function bn_slug(string $text): string
-    {
-        $text = trim($text);
+function bn_slug(string $text): string
+{
+    $text = trim($text);
 
-        // Replace spaces with dash
-        $text = preg_replace('/\s+/u', '-', $text);
+    // Replace spaces with dash
+    $text = preg_replace('/\s+/u', '-', $text);
 
-        // Remove everything except Bangla, English, numbers, dash
-        $text = preg_replace('/[^\p{Bengali}\p{L}\p{N}-]/u', '', $text);
+    // Remove everything except Bangla, English, numbers, dash
+    $text = preg_replace('/[^\p{Bengali}\p{L}\p{N}-]/u', '', $text);
 
-        // Lowercase English only
-        return Str::lower($text);
-    }
+    // Lowercase English only
+    return Str::lower($text);
+}

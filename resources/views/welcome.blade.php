@@ -8,6 +8,7 @@
         <div class="blog">
             <h2 class="h2">Latest News</h2>
             <div class="blog-card-group">
+                <a href="news/1">
                 <div class="blog-card">
                     <div class="blog-card-banner">
                         <img src="./assets/images/blog-1.png" alt="blog image" width="250" class="blog-banner-img">
@@ -28,6 +29,8 @@
                         </div>
                     </div>
                 </div>
+                </a>
+                <a href="news/2">
                 <div class="blog-card">
                     <div class="blog-card-banner">
                         <img src="./assets/images/blog-2.png" alt="blog image" width="250" class="blog-banner-img">
@@ -50,6 +53,8 @@
                         </div>
                     </div>
                 </div>
+                </a>
+                <a href="news/3">
                 <div class="blog-card">
                     <div class="blog-card-banner">
                         <img src="./assets/images/blog-3.png" alt="blog image" width="250" class="blog-banner-img">
@@ -72,6 +77,8 @@
                         </div>
                     </div>
                 </div>
+                </a>
+                <a href="news/4">
                 <div class="blog-card">
                     <div class="blog-card-banner">
                         <img src="./assets/images/blog-4.png" alt="blog image" width="250" class="blog-banner-img">
@@ -94,6 +101,8 @@
                         </div>
                     </div>
                 </div>
+                </a>
+                <a href="news/5">
                 <div class="blog-card">
                     <div class="blog-card-banner">
                         <img src="./assets/images/blog-5.png" alt="blog image" width="250" class="blog-banner-img">
@@ -116,6 +125,8 @@
                         </div>
                     </div>
                 </div>
+                </a>
+                <a href="news/6">
                 <div class="blog-card">
                     <div class="blog-card-banner">
                         <img src="./assets/images/blog-6.png" alt="blog image" width="250" class="blog-banner-img">
@@ -138,6 +149,8 @@
                         </div>
                     </div>
                 </div>
+                </a>
+                <a href="news/7">
                 <div class="blog-card">
                     <div class="blog-card-banner">
                         <img src="./assets/images/blog-7.png" alt="blog image" width="250" class="blog-banner-img">
@@ -160,6 +173,8 @@
                         </div>
                     </div>
                 </div>
+                </a>
+                <a href="news/8">
                 <div class="blog-card">
                     <div class="blog-card-banner">
                         <img src="./assets/images/blog-8.png" alt="blog image" width="250" class="blog-banner-img">
@@ -182,6 +197,8 @@
                         </div>
                     </div>
                 </div>
+                </a>
+                <a href="news/9">
                 <div class="blog-card">
                     <div class="blog-card-banner">
                         <img src="./assets/images/blog-9.png" alt="blog image" width="250" class="blog-banner-img">
@@ -204,6 +221,8 @@
                         </div>
                     </div>
                 </div>
+                </a>
+                <a href="news/10">
                 <div class="blog-card">
                     <div class="blog-card-banner">
                         <img src="./assets/images/blog-10.png" alt="blog image" width="250" class="blog-banner-img">
@@ -226,6 +245,7 @@
                         </div>
                     </div>
                 </div>
+                </a>
             </div>
             <button class="btn-load-more">Load More</button>
         </div>
