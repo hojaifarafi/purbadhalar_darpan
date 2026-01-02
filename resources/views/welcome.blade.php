@@ -1,254 +1,39 @@
 @extends('layouts.main')
 @section('content')
-<section class="hero">
-    <img src="./assets/images/hero.jpg" alt="" class="hero-img">
-</section>
-<section class="main">
-    <div class="container">
-        <div class="blog">
-            <h2 class="h2">Latest News</h2>
-            <div class="blog-card-group">
-                <a href="news/1">
-                <div class="blog-card">
-                    <div class="blog-card-banner">
-                        <img src="./assets/images/blog-1.png" alt="blog image" width="250" class="blog-banner-img">
-                    </div>
-                    <div class="blog-content-wrapper">
-                        <button class="blog-topic text-tiny">Database</button>
-                        <h3 class="h3 blog-title">Understanding SQL Joins: A Comprehensive Guide</h3>
-                        <p class="blog-text">SQL joins are essential for combining data from multiple 
-                            tables in a relational database. This guide explores the different types
-                                of joins and their use cases...</p>
-                        <div class="wrapper-flex">
-                            <div class="wrapper">
-                                <span>by Julia Waker</span>
-                                <p>
-                                    <time datetime="2022-1-17">Jan 17, 2022</time>                                           
-                                </p>
+    <section class="hero">
+        <img src="./assets/images/hero.jpg" alt="" class="hero-img">
+    </section>
+    <section class="main">
+        <div class="container">
+            <div class="blog">
+                <h2 class="h2">Latest News</h2>
+                <div class="blog-card-group">
+                    @foreach($news as $new)
+                    <a href="{{ url('news/'.$new->slug) }}" wire:navigate>
+                    <div class="blog-card">
+                            <div class="blog-card-banner">
+                                <img src="{{ Storage::url($new->image) }}" alt="blog image" width="250" class="blog-banner-img">
+                            </div>
+                            <div class="blog-content-wrapper">
+                                <button class="blog-topic text-tiny">{{$new->category->name}}</button>
+                                <h3 class="h3 blog-title">{{ $new->title }}</h3>
+                                <p class="blog-text">{!! Str::limit(strip_tags($new->content), 100) !!}</p>
+                                <div class="wrapper-flex">
+                                    <div class="wrapper">
+                                        <span>by {{$new->authorUser->name}}</span>
+                                        <p>
+                                        <time datetime="{{$new->created_at}}">{{ $new->created_at->format('d M Y') }}</time>                                           
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        </a>
+                    @endforeach
                 </div>
-                </a>
-                <a href="news/2">
-                <div class="blog-card">
-                    <div class="blog-card-banner">
-                        <img src="./assets/images/blog-2.png" alt="blog image" width="250" class="blog-banner-img">
-                    </div>
-                    <div class="blog-content-wrapper">
-                        <button class="blog-topic text-tiny">Database</button>
-                        <h3 class="h3 blog-title">Understanding SQL Joins: A Comprehensive Guide</h3>
-                        <p class="blog-text">SQL joins are essential for combining data from multiple 
-                            tables in a relational database. This guide explores the different types
-                                of joins and their use cases...</p>
-                        <div class="wrapper-flex">
-                            <div class="wrapper">
-                                <span>Julia Waker</span>
-                                <p>
-                                    <time datetime="2022-1-17">Jan 17, 2022</time>
-                                    <span class="separator"></span>
-                                    <time datetime="PT3M">3 min</time>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </a>
-                <a href="news/3">
-                <div class="blog-card">
-                    <div class="blog-card-banner">
-                        <img src="./assets/images/blog-3.png" alt="blog image" width="250" class="blog-banner-img">
-                    </div>
-                    <div class="blog-content-wrapper">
-                        <button class="blog-topic text-tiny">Database</button>
-                        <h3 class="h3 blog-title">Understanding SQL Joins: A Comprehensive Guide</h3>
-                        <p class="blog-text">SQL joins are essential for combining data from multiple 
-                            tables in a relational database. This guide explores the different types
-                                of joins and their use cases...</p>
-                        <div class="wrapper-flex">
-                            <div class="wrapper">
-                                <span>Julia Waker</span>
-                                <p>
-                                    <time datetime="2022-1-17">Jan 17, 2022</time>
-                                    <span class="separator"></span>
-                                    <time datetime="PT3M">3 min</time>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </a>
-                <a href="news/4">
-                <div class="blog-card">
-                    <div class="blog-card-banner">
-                        <img src="./assets/images/blog-4.png" alt="blog image" width="250" class="blog-banner-img">
-                    </div>
-                    <div class="blog-content-wrapper">
-                        <button class="blog-topic text-tiny">Database</button>
-                        <h3 class="h3 blog-title">Understanding SQL Joins: A Comprehensive Guide</h3>
-                        <p class="blog-text">SQL joins are essential for combining data from multiple 
-                            tables in a relational database. This guide explores the different types
-                                of joins and their use cases...</p>
-                        <div class="wrapper-flex">
-                            <div class="wrapper">
-                                <span>Julia Waker</span>
-                                <p>
-                                    <time datetime="2022-1-17">Jan 17, 2022</time>
-                                    <span class="separator"></span>
-                                    <time datetime="PT3M">3 min</time>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </a>
-                <a href="news/5">
-                <div class="blog-card">
-                    <div class="blog-card-banner">
-                        <img src="./assets/images/blog-5.png" alt="blog image" width="250" class="blog-banner-img">
-                    </div>
-                    <div class="blog-content-wrapper">
-                        <button class="blog-topic text-tiny">Database</button>
-                        <h3 class="h3 blog-title">Understanding SQL Joins: A Comprehensive Guide</h3>
-                        <p class="blog-text">SQL joins are essential for combining data from multiple 
-                            tables in a relational database. This guide explores the different types
-                                of joins and their use cases...</p>
-                        <div class="wrapper-flex">
-                            <div class="wrapper">
-                                <span>Julia Waker</span>
-                                <p>
-                                    <time datetime="2022-1-17">Jan 17, 2022</time>
-                                    <span class="separator"></span>
-                                    <time datetime="PT3M">3 min</time>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </a>
-                <a href="news/6">
-                <div class="blog-card">
-                    <div class="blog-card-banner">
-                        <img src="./assets/images/blog-6.png" alt="blog image" width="250" class="blog-banner-img">
-                    </div>
-                    <div class="blog-content-wrapper">
-                        <button class="blog-topic text-tiny">Database</button>
-                        <h3 class="h3 blog-title">Understanding SQL Joins: A Comprehensive Guide</h3>
-                        <p class="blog-text">SQL joins are essential for combining data from multiple 
-                            tables in a relational database. This guide explores the different types
-                                of joins and their use cases...</p>
-                        <div class="wrapper-flex">
-                            <div class="wrapper">
-                                <span>Julia Waker</span>
-                                <p>
-                                    <time datetime="2022-1-17">Jan 17, 2022</time>
-                                    <span class="separator"></span>
-                                    <time datetime="PT3M">3 min</time>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </a>
-                <a href="news/7">
-                <div class="blog-card">
-                    <div class="blog-card-banner">
-                        <img src="./assets/images/blog-7.png" alt="blog image" width="250" class="blog-banner-img">
-                    </div>
-                    <div class="blog-content-wrapper">
-                        <button class="blog-topic text-tiny">Database</button>
-                        <h3 class="h3 blog-title">Understanding SQL Joins: A Comprehensive Guide</h3>
-                        <p class="blog-text">SQL joins are essential for combining data from multiple 
-                            tables in a relational database. This guide explores the different types
-                                of joins and their use cases...</p>
-                        <div class="wrapper-flex">
-                            <div class="wrapper">
-                                <span>Julia Waker</span>
-                                <p>
-                                    <time datetime="2022-1-17">Jan 17, 2022</time>
-                                    <span class="separator"></span>
-                                    <time datetime="PT3M">3 min</time>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </a>
-                <a href="news/8">
-                <div class="blog-card">
-                    <div class="blog-card-banner">
-                        <img src="./assets/images/blog-8.png" alt="blog image" width="250" class="blog-banner-img">
-                    </div>
-                    <div class="blog-content-wrapper">
-                        <button class="blog-topic text-tiny">Database</button>
-                        <h3 class="h3 blog-title">Understanding SQL Joins: A Comprehensive Guide</h3>
-                        <p class="blog-text">SQL joins are essential for combining data from multiple 
-                            tables in a relational database. This guide explores the different types
-                                of joins and their use cases...</p>
-                        <div class="wrapper-flex">
-                            <div class="wrapper">
-                                <span>Julia Waker</span>
-                                <p>
-                                    <time datetime="2022-1-17">Jan 17, 2022</time>
-                                    <span class="separator"></span>
-                                    <time datetime="PT3M">3 min</time>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </a>
-                <a href="news/9">
-                <div class="blog-card">
-                    <div class="blog-card-banner">
-                        <img src="./assets/images/blog-9.png" alt="blog image" width="250" class="blog-banner-img">
-                    </div>
-                    <div class="blog-content-wrapper">
-                        <button class="blog-topic text-tiny">Database</button>
-                        <h3 class="h3 blog-title">Understanding SQL Joins: A Comprehensive Guide</h3>
-                        <p class="blog-text">SQL joins are essential for combining data from multiple 
-                            tables in a relational database. This guide explores the different types
-                                of joins and their use cases...</p>
-                        <div class="wrapper-flex">
-                            <div class="wrapper">
-                                <span>Julia Waker</span>
-                                <p>
-                                    <time datetime="2022-1-17">Jan 17, 2022</time>
-                                    <span class="separator"></span>
-                                    <time datetime="PT3M">3 min</time>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </a>
-                <a href="news/10">
-                <div class="blog-card">
-                    <div class="blog-card-banner">
-                        <img src="./assets/images/blog-10.png" alt="blog image" width="250" class="blog-banner-img">
-                    </div>
-                    <div class="blog-content-wrapper">
-                        <button class="blog-topic text-tiny">Database</button>
-                        <h3 class="h3 blog-title">Understanding SQL Joins: A Comprehensive Guide</h3>
-                        <p class="blog-text">SQL joins are essential for combining data from multiple 
-                            tables in a relational database. This guide explores the different types
-                                of joins and their use cases...</p>
-                        <div class="wrapper-flex">
-                            <div class="wrapper">
-                                <span>Julia Waker</span>
-                                <p>
-                                    <time datetime="2022-1-17">Jan 17, 2022</time>
-                                    <span class="separator"></span>
-                                    <time datetime="PT3M">3 min</time>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </a>
+                {{$news->links()}}
+                <!-- <button class="btn-load-more">Load More</button> -->
             </div>
-            <button class="btn-load-more">Load More</button>
         </div>
-    </div>
-</section>
+    </section>
 @endsection

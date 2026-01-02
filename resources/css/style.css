@@ -37,6 +37,7 @@
 
     --py: 5rem;
 }
+
 *,*::before,*::after{
     margin: 0;
     padding: 0;
@@ -248,7 +249,13 @@ header .btn-group{
     text-align: center;
     margin-bottom: 3rem;
 }
-.blog-card-group{ margin-bottom: 3rem;}
+.blog-card-group{ 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
 .blog-card{
     background: var(--background-color-primary);
     border-radius: 8px;
@@ -438,8 +445,9 @@ footer .wrapper{text-align: center;}
     padding:0.75rem;
 }
 .news-card img{
-    width: 100%;
+    width: 300px;
     height: 200px;
+    object-fit: cover;
     border-radius: 8px;;
 }
 

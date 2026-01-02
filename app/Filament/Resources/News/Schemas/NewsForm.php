@@ -42,6 +42,7 @@ class NewsForm
                 RichEditor::make('content')
                     ->label('News Details')
                     ->required()
+                    ->fileAttachmentsDirectory('news')
                     ->columnSpanFull(),
                 Select::make('status')
                     ->options(['draft' => 'Draft', 'published' => 'Published', 'closed' => 'Closed'])

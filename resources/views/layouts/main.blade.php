@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>পূর্বধলার দর্পন। পূর্বধলার নিউজ পোর্টাল</title>
-    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/pd_logo.png">
-    @vite(['resources/css/style.css'])
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/pd_logo.png') }}">
+    @vite(['resources/css/style.css','resources/css/app.css'])
+    @livewireStyles
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,7 +15,7 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="/" class="navbar-logo">
+                <a href="/" class="navbar-logo" wire:navigate>
                     <span class="nav-logo"><span style="color: green;">পূর্বধলার</span> <span style="color:red;">দর্পন</span></span>
                 </a>
                 <div class="btn-group">
@@ -97,12 +98,12 @@
     </header>
         <div class="categories container" id="category">
             <ul class="category-list">
-                <li><a href="/">প্রচ্ছদ</a></li>
-                <li><a href="#">বাংলা সংবাদ</a></li>
-                <li><a href="#">বিজ্ঞান ও প্রযুক্তি</a></li>
-                <li><a href="#">স্বাস্থ্য</a></li>
-                <li><a href="#">পরিবেশ</a></li>
-                <li><a href="#">আন্তর্জাতিক</a></li>
+                <li><a href="/" wire:navigate>প্রচ্ছদ</a></li>
+                <li><a href="/" wire:navigate>বাংলা সংবাদ</a></li>
+                <li><a href="/" wire:navigate>বিজ্ঞান ও প্রযুক্তি</a></li>
+                <li><a href="/" wire:navigate>স্বাস্থ্য</a></li>
+                <li><a href="/" wire:navigate>পরিবেশ</a></li>
+                <li><a href="/" wire:navigate>আন্তর্জাতিক</a></li>
             </ul>
         </div>
     <main>
@@ -112,7 +113,7 @@
     <footer>
         <div class="container">
             <div class="wrapper">
-                <a href="/" class="footer-logo">
+                <a href="/" class="footer-logo" wire:navigate>
                     <span class="main-logo"><span style="color: green;">পূর্বধলার</span> <span style="color:red;">দর্পন</span></span>
                 </a>
                 <p class="footer-text">Learn about webdevelopment,backend development, Database etc.</p>
@@ -138,5 +139,6 @@
         </p>
     </footer>
 @vite(['resources/js/script.js'])
+@livewireScripts
 </body>
 </html>
