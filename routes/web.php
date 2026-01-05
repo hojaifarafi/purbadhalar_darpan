@@ -18,5 +18,6 @@ Route::middleware('auth')->group(function () {
 Route::group(['prefix'=> 'news'], function () {
     Route::get('/{slug}',[BaseController::class,'news_details'])->name('news.details');
 });
+Route::get('/video/{video_id}',[BaseController::class,'video'])->name('video');
 
 require __DIR__.'/auth.php';

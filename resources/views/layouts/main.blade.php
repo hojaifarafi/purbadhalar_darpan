@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="@if(isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') dark-theme @else light-theme @endif" bgcolor="white">
-    <header>
+    <header class="header-z">
         <div class="container">
             <nav class="navbar">
                 <a href="/" class="navbar-logo" >
@@ -81,16 +81,16 @@
                         <p class="h3 nav-title">Categories</p>
                         <ul>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">প্রচ্ছদ</a>
+                                <a href="/" class="nav-link">প্রচ্ছদ</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">রাজনীতি</a>
+                                <a href="/" class="nav-link">রাজনীতি</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">সারাদেশ</a>
+                                <a href="/" class="nav-link">সারাদেশ</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">বিনোদন</a>
+                                <a href="/" class="nav-link">বিনোদন</a>
                             </li>
                         </ul>
                     </div>
@@ -102,11 +102,10 @@
         <div class="categories container" id="category">
             <ul class="category-list">
                 <li><a href="/" >প্রচ্ছদ</a></li>
-                <li><a href="/" >বাংলা সংবাদ</a></li>
-                <li><a href="/" >বিজ্ঞান ও প্রযুক্তি</a></li>
-                <li><a href="/" >স্বাস্থ্য</a></li>
-                <li><a href="/" >পরিবেশ</a></li>
-                <li><a href="/" >আন্তর্জাতিক</a></li>
+                <li><a href="/" >রাজনীতি</a></li>
+                <li><a href="/" >শিক্ষা</a></li>
+                <li><a href="/" >সারাদেশ</a></li>
+                <li><a href="/" >বিনোদন</a></li>
             </ul>
         </div>
     <main>
