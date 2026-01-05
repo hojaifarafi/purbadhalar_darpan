@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>পূর্বধলার দর্পন। পূর্বধলার নিউজ পোর্টাল</title>
+    @stack('social-meta')
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/pd_logo.png') }}">
     @vite(['resources/css/style.css','resources/css/app.css'])
     @livewireStyles
@@ -11,11 +12,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="light-theme" bgcolor="white">
+<body class="@if(isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark') dark-theme @else light-theme @endif" bgcolor="white">
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="/" class="navbar-logo" wire:navigate>
+                <a href="/" class="navbar-logo" >
                     <span class="nav-logo"><span style="color: green;">পূর্বধলার</span> <span style="color:red;">দর্পন</span></span>
                 </a>
                 <div class="btn-group">
@@ -32,17 +33,17 @@
                 <div class="flex-wrapper">
                     <ul class="desktop-nav">
                         <li class="social-btn-facebook">
-                            <a href="https://facebook.com">
+                            <a href="https://www.facebook.com/purbadhala" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 440 146.7 540.8 258.2 568.5L258.2 398.2L205.4 398.2L205.4 320L258.2 320L258.2 286.3C258.2 199.2 297.6 158.8 383.2 158.8C399.4 158.8 427.4 162 438.9 165.2L438.9 236C432.9 235.4 422.4 235 409.3 235C367.3 235 351.1 250.9 351.1 292.2L351.1 320L434.7 320L420.3 398.2L351 398.2L351 574.1C477.8 558.8 576 450.9 576 320z"/></svg>
                             </a>
                         </li>
                         <li class="social-btn-youtube">
-                            <a href="https://youtube.com">
+                            <a href="https://www.youtube.com/@purbadhala" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M581.7 188.1C575.5 164.4 556.9 145.8 533.4 139.5C490.9 128 320.1 128 320.1 128C320.1 128 149.3 128 106.7 139.5C83.2 145.8 64.7 164.4 58.4 188.1C47 231 47 320.4 47 320.4C47 320.4 47 409.8 58.4 452.7C64.7 476.3 83.2 494.2 106.7 500.5C149.3 512 320.1 512 320.1 512C320.1 512 490.9 512 533.5 500.5C557 494.2 575.5 476.3 581.8 452.7C593.2 409.8 593.2 320.4 593.2 320.4C593.2 320.4 593.2 231 581.8 188.1zM264.2 401.6L264.2 239.2L406.9 320.4L264.2 401.6z"/></svg>
                             </a>
                         </li>
                         <li class="social-btn-whatsapp">
-                            <a href="https://whatsapp.com">
+                            <a href="https://wa.me/8801714-467788" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg>
                             </a>
                     </ul>
@@ -58,36 +59,38 @@
                         <svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
                     </button>
                     <div class="wraper">
-                        <p class="h3 nav-title">Main Menu</p>
-                        <ul>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Contact</a>
-                            </li>
+                        <p class="h3 nav-title">Connect with us</p>
+                        <ul class="social-mobile">
+                        <li class="social-btn-facebook">
+                            <a href="https://www.facebook.com/purbadhala" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 440 146.7 540.8 258.2 568.5L258.2 398.2L205.4 398.2L205.4 320L258.2 320L258.2 286.3C258.2 199.2 297.6 158.8 383.2 158.8C399.4 158.8 427.4 162 438.9 165.2L438.9 236C432.9 235.4 422.4 235 409.3 235C367.3 235 351.1 250.9 351.1 292.2L351.1 320L434.7 320L420.3 398.2L351 398.2L351 574.1C477.8 558.8 576 450.9 576 320z"/></svg>
+                            </a>
+                        </li>
+                        <li class="social-btn-youtube">
+                            <a href="https://www.youtube.com/@purbadhala" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M581.7 188.1C575.5 164.4 556.9 145.8 533.4 139.5C490.9 128 320.1 128 320.1 128C320.1 128 149.3 128 106.7 139.5C83.2 145.8 64.7 164.4 58.4 188.1C47 231 47 320.4 47 320.4C47 320.4 47 409.8 58.4 452.7C64.7 476.3 83.2 494.2 106.7 500.5C149.3 512 320.1 512 320.1 512C320.1 512 490.9 512 533.5 500.5C557 494.2 575.5 476.3 581.8 452.7C593.2 409.8 593.2 320.4 593.2 320.4C593.2 320.4 593.2 231 581.8 188.1zM264.2 401.6L264.2 239.2L406.9 320.4L264.2 401.6z"/></svg>
+                            </a>
+                        </li>
+                        <li class="social-btn-whatsapp">
+                            <a href="https://wa.me/8801714-467788" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg>
+                            </a>
                         </ul>
                     </div>
                     <div class="">
                         <p class="h3 nav-title">Categories</p>
                         <ul>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Home</a>
+                                <a href="#" class="nav-link">প্রচ্ছদ</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">About</a>
+                                <a href="#" class="nav-link">রাজনীতি</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Blog</a>
+                                <a href="#" class="nav-link">সারাদেশ</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Contact</a>
+                                <a href="#" class="nav-link">বিনোদন</a>
                             </li>
                         </ul>
                     </div>
@@ -98,12 +101,12 @@
     </header>
         <div class="categories container" id="category">
             <ul class="category-list">
-                <li><a href="/" wire:navigate>প্রচ্ছদ</a></li>
-                <li><a href="/" wire:navigate>বাংলা সংবাদ</a></li>
-                <li><a href="/" wire:navigate>বিজ্ঞান ও প্রযুক্তি</a></li>
-                <li><a href="/" wire:navigate>স্বাস্থ্য</a></li>
-                <li><a href="/" wire:navigate>পরিবেশ</a></li>
-                <li><a href="/" wire:navigate>আন্তর্জাতিক</a></li>
+                <li><a href="/" >প্রচ্ছদ</a></li>
+                <li><a href="/" >বাংলা সংবাদ</a></li>
+                <li><a href="/" >বিজ্ঞান ও প্রযুক্তি</a></li>
+                <li><a href="/" >স্বাস্থ্য</a></li>
+                <li><a href="/" >পরিবেশ</a></li>
+                <li><a href="/" >আন্তর্জাতিক</a></li>
             </ul>
         </div>
     <main>
@@ -113,7 +116,7 @@
     <footer>
         <div class="container">
             <div class="wrapper">
-                <a href="/" class="footer-logo" wire:navigate>
+                <a href="/" class="footer-logo" >
                     <span class="main-logo"><span style="color: green;">পূর্বধলার</span> <span style="color:red;">দর্পন</span></span>
                 </a>
                 <p class="footer-text">Learn about webdevelopment,backend development, Database etc.</p>

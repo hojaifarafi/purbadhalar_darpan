@@ -37,7 +37,6 @@ class NewsForm
                     ->imageResizeMode('cover')
                     ->directory('thumbnails')
                     ->imageResizeTargetWidth(888) 
-                    ->imageResizeTargetHeight(500)
                     ->image(),
                 RichEditor::make('content')
                     ->label('News Details')

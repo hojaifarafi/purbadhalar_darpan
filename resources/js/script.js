@@ -14,7 +14,7 @@ themeBtn.forEach((btn) =>{
     btn.addEventListener("click", () =>{
         document.body.classList.toggle("dark-theme");
         document.body.classList.toggle("light-theme");
-
+        document.cookie = "theme=" + (document.body.classList.contains("dark-theme") ? "dark" : "light") + "; path=/";
         themeBtn.forEach((button) =>{
             button.classList.toggle("light");
             button.classList.toggle("dark");
@@ -22,6 +22,3 @@ themeBtn.forEach((btn) =>{
     })
 
     });
-const viewportWidth = window.innerWidth;
-console.log(`Viewport width: ${viewportWidth}px`);
-document.querySelector(".btn-load-more").innerHTML = `Load More (${viewportWidth}px)`;

@@ -26,6 +26,9 @@ class NewsTable
                 TextColumn::make('slug')
                     ->searchable(),
                 ImageColumn::make('image'),
+                TextColumn::make('views')
+                    ->numeric()
+                    ->sortable(),
                 TextColumn::make('status')
                     ->badge(),
                 TextColumn::make('created_at')

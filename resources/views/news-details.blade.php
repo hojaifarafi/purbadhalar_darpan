@@ -30,3 +30,9 @@
     </div>
 </section>
 @endsection
+@push('social-meta')
+<meta property="og:title" content="{{ $news->title }}">
+<meta property="og:description" content="{{ Str::limit(strip_tags($news->content), 100) }}">
+<meta property="og:image" content="{{ Storage::url($news->image) }}">
+<meta property="og:url" content="{{ url('news/'.$news->slug) }}">
+@endpush

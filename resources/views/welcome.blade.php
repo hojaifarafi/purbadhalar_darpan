@@ -9,7 +9,7 @@
                 <h2 class="h2">Latest News</h2>
                 <div class="blog-card-group">
                     @foreach($news as $new)
-                    <a href="{{ url('news/'.$new->slug) }}" wire:navigate>
+                    <a href="{{ url('news/'.$new->slug) }}" >
                     <div class="blog-card">
                             <div class="blog-card-banner">
                                 <img src="{{ Storage::url($new->image) }}" alt="blog image" width="250" class="blog-banner-img">
@@ -37,3 +37,9 @@
         </div>
     </section>
 @endsection
+@push('social-meta')
+<meta property="og:title" content="পূর্বধলার দর্পন। পূর্বধলার নিউজ পোর্টাল">
+<meta property="og:description" content="পূর্বধলার সর্বাধিক পঠিত ও জনপ্রিয় নিউজ পোর্টাল">
+<meta property="og:image" content="{{ asset('assets/images/pd_logo.png') }}">
+<meta property="og:url" content="{{ url('/') }}">
+@endpush

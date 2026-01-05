@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->longText('content');
             $table->enum('status', ['draft', 'published', 'closed'])->default('draft');
+            $table->integer('views')->default(0);
             $table->timestamps();
             $table->foreign('author')->references('id')->on('users');
             $table->foreign('category_id')->references('id')->on('categories');
